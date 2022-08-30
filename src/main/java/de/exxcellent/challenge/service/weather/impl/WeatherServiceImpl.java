@@ -39,6 +39,6 @@ public class WeatherServiceImpl implements IWeatherService {
         Integer maxTemp = Integer.parseInt(record.get(headerMap.get(WeatherHeadersWhiteList.MAX_TEMP.column)));
         Integer minTemp = Integer.parseInt(record.get(headerMap.get(WeatherHeadersWhiteList.MIN_TEMP.column)));
 
-        return Math.abs(maxTemp - minTemp);
+        return maxTemp - minTemp;
     }
 }
