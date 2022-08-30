@@ -15,11 +15,9 @@ public class WeatherServiceTest {
         weatherService = new WeatherServiceImpl();
     }
 
-
     @Test
     public void findTeamNameWithTheSmallestGoalsDifferenceShouldSucceed() {
         Assertions.assertEquals("14", weatherService.findDayWithTheSmallestTemperatureSpread());
     }
-
 
 }
