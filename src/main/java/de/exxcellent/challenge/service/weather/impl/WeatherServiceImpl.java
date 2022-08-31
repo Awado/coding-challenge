@@ -1,5 +1,6 @@
 package de.exxcellent.challenge.service.weather.impl;
 
+import de.exxcellent.challenge.service.Files;
 import de.exxcellent.challenge.service.weather.IWeatherService;
 import de.exxcellent.challenge.service.weather.config.WeatherHeadersWhiteList;
 import de.exxcellent.challenge.utils.fileLoader.impl.CSVFileLoader;
@@ -15,7 +16,7 @@ public class WeatherServiceImpl implements IWeatherService {
 
     @Override
     public String findDayWithTheSmallestTemperatureSpread() {
-        CSVFileLoader csvFileLoader = FileLoaderManager.load("de/exxcellent/challenge/weather.csv");
+        CSVFileLoader csvFileLoader = FileLoaderManager.load(Files.WEATHER_FILE.path);
 
         Map<String, Integer> headerMap = new HashMap<>();
         IntStream.range(0, csvFileLoader.getHeader().size()).forEach(i -> {
